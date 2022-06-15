@@ -1,29 +1,50 @@
-# .
+# Frontend Mentor - Advice generator app solution
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Recommended IDE Setup
+## Table of contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## Customize configuration
+## Overview
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### The challenge
 
-## Project Setup
+Users should be able to:
 
-```sh
-npm install
-```
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Generate a new piece of advice by clicking the dice icon
 
-### Compile and Hot-Reload for Development
+### Screenshot
 
-```sh
-npm run dev
-```
+![](./screenshot.jpg)
 
-### Compile and Minify for Production
+### Links
 
-```sh
-npm run build
-```
+- [Repo URL](https://github.com/Yellow-May/Frontend-Mentor-Advice-Generator-App)
+- [Live Site Url](https://frontend-mentor-advice-generator-app-alpha.vercel.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Vuejs](https://vuejs.org/) - JS library
+
+## Author
+
+- Website - [The Yellow May](https://yellow-may.vercel.app/)
+- Frontend Mentor - [@Yellow-May](https://www.frontendmentor.io/profile/Yellow-May)
+- Linkedin - [Precious Onyekwere](https://www.linkedin.com/in/precious-onyekwere-7a87001b5/)

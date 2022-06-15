@@ -1,81 +1,101 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import FooterVue from './components/Footer.vue';
+import CustomButtonVue from './components/CustomButton.vue';
+import CustomDividerVue from './components/CustomDivider.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+	<main>
+		<h1>Advice #117</h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+		<p class="advice">"It is easy to sit up and take notice, what's difficult is getting up and taking action"</p>
 
-  <main>
-    <TheWelcome />
-  </main>
+		<CustomDividerVue />
+
+		<CustomButtonVue />
+	</main>
+
+	<FooterVue />
 </template>
 
 <style>
-@import './assets/base.css';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400&@800&display=swap');
+@import './styles/base.css';
+@import './styles/variables.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+	min-height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding: 5%;
+	background-color: var(--Dark-Blue);
 
-  font-weight: normal;
+	font-family: 'Manrope', sans-serif;
+	font-weight: 800;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-header {
-  line-height: 1.5;
+main {
+	position: relative;
+	width: 100%;
+	min-width: 100%;
+	background-color: var(--Dark-Grayish-Blue);
+	border-radius: 16px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+main h1 {
+	color: var(--Neon-Green);
+	font-size: 0.5em;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+	margin: 40px 0 32px 0;
+	text-align: center;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+main p.advice {
+	margin: 0 40px;
+	margin-bottom: 104px;
+	text-align: center;
+	color: var(--Light-Cyan);
+	font-size: 1.25em;
+	line-height: 1.8rem;
+	letter-spacing: 2.5px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+@media (min-width: 640px) {
+	#app {
+		padding: 10%;
+	}
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+@media (min-width: 768px) {
+	#app {
+		padding: 15%;
+	}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+	main h1 {
+		font-size: 0.75em;
+	}
 
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+	main p.advice {
+		font-size: 1.5em;
+		line-height: 2.5rem;
+		margin-bottom: 142px;
+	}
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+@media (min-width: 960px) {
+	#app {
+		padding: 20%;
+	}
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+@media (min-width: 1240px) {
+	#app {
+		padding: 30%;
+	}
 }
 </style>
