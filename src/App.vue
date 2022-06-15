@@ -1,18 +1,43 @@
-<script setup>
+<script>
 import FooterVue from './components/Footer.vue';
 import CustomButtonVue from './components/CustomButton.vue';
 import CustomDividerVue from './components/CustomDivider.vue';
+import getAdvice from './utils/getAdvice';
+
+export default {
+	data() {
+		return {
+			slip_id: null,
+			slip_advice: null,
+		};
+	},
+	mounted() {
+		this.requestAdvice();
+	},
+	components: {
+		FooterVue,
+		CustomButtonVue,
+		CustomDividerVue,
+	},
+	methods: {
+		async requestAdvice() {
+			const slip = await getAdvice();
+			this.slip_id = slip.id;
+			this.slip_advice = slip.advice;
+		},
+	},
+};
 </script>
 
 <template>
 	<main>
-		<h1>Advice #117</h1>
+		<h1>Advice #{{ slip_id }}</h1>
 
-		<p class="advice">"It is easy to sit up and take notice, what's difficult is getting up and taking action"</p>
+		<p class="advice">"{{ slip_advice }}"</p>
 
 		<CustomDividerVue />
 
-		<CustomButtonVue />
+		<CustomButtonVue :requestAdvice="requestAdvice" />
 	</main>
 
 	<FooterVue />
@@ -27,7 +52,7 @@ import CustomDividerVue from './components/CustomDivider.vue';
 	min-height: 100%;
 	width: 100%;
 	margin: 0 auto;
-	padding: 5%;
+	padding: 0 5%;
 	background-color: var(--Dark-Blue);
 
 	font-family: 'Manrope', sans-serif;
@@ -67,13 +92,13 @@ main p.advice {
 
 @media (min-width: 640px) {
 	#app {
-		padding: 10%;
+		padding: 0 10%;
 	}
 }
 
 @media (min-width: 768px) {
 	#app {
-		padding: 15%;
+		padding: 0 15%;
 	}
 
 	main h1 {
@@ -89,13 +114,13 @@ main p.advice {
 
 @media (min-width: 960px) {
 	#app {
-		padding: 20%;
+		padding: 0 20%;
 	}
 }
 
 @media (min-width: 1240px) {
 	#app {
-		padding: 30%;
+		padding: 0 30%;
 	}
 }
 </style>
