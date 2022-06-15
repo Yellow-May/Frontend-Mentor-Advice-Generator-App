@@ -7,8 +7,8 @@ export default {
 </script>
 
 <template>
-	<button @click="requestAdvice()">
-		<img src="../images/icon-dice.svg" />
+	<button id="'new_advice'" title="get new advice" @click="requestAdvice()">
+		<img src="../images/icon-dice.svg" alt="dice" />
 	</button>
 </template>
 
