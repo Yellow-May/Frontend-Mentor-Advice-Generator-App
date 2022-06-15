@@ -1,5 +1,13 @@
+<script>
+export default {
+	props: {
+		requestAdvice: Function,
+	},
+};
+</script>
+
 <template>
-	<button>
+	<button @click="requestAdvice()">
 		<img src="../images/icon-dice.svg" />
 	</button>
 </template>
