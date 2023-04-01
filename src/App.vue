@@ -9,6 +9,7 @@ export default {
 		return {
 			slip_id: null,
 			slip_advice: null,
+			loading: true,
 		};
 	},
 	mounted() {
@@ -21,9 +22,11 @@ export default {
 	},
 	methods: {
 		async requestAdvice() {
+			this.loading = true;
 			const slip = await getAdvice();
 			this.slip_id = slip.id;
 			this.slip_advice = slip.advice;
+			this.loading = false;
 		},
 	},
 };
@@ -33,7 +36,8 @@ export default {
 	<main>
 		<h1>Advice #{{ slip_id }}</h1>
 
-		<p class="advice">"{{ slip_advice }}"</p>
+		<div v-bind:hidden="!loading" class="loading">Loading...</div>
+		<p v-bind:hidden="loading" class="advice">"{{ slip_advice }}"</p>
 
 		<CustomDividerVue />
 
@@ -78,6 +82,16 @@ main h1 {
 	text-transform: uppercase;
 	margin: 40px 0 32px 0;
 	text-align: center;
+}
+
+main div.loading {
+	margin: 0 40px;
+	margin-bottom: 124px;
+	text-align: center;
+	color: var(--Light-Cyan);
+	font-size: 1.25em;
+	line-height: 1.8rem;
+	letter-spacing: 2.5px;
 }
 
 main p.advice {
